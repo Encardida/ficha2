@@ -92,7 +92,7 @@ class GroupsController < ApplicationController
     end
 
     def group_params
-      params.require(:group).permit(:name, :matter_id, :semester_id, :course_id)
+      params.require(:group).permit(:name, :matter_id, :semester_id, :course_id, :vacancies)
     end
 
     def page_length

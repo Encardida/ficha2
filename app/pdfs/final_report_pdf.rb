@@ -19,12 +19,13 @@ class FinalReportPdf < Prawn::Document
 
   def get_rows
     rows = []
-    rows.push ["Código", "Turma", "Disciplina", "Horário", "Nº Alunos", "Sala", "Curso", "Professor"]
+    rows.push ["Código", "Turma", "Disciplina", "Horário", "Sala", "Nº Alunos", "Curso", "Professor"]
 
     selected_groups(@semester.id).each_with_index do |group, i|
 
-      rows.push [get_code(group), get_classes(group), get_matter(group), get_schedule(group),
-                get_vacancies(group), get_classroom(group), get_course(group), get_teacher(group)]
+
+      rows.push [get_code(group), get_classes(group), get_matter(group), get_schedule(group), get_classroom(group),
+                get_vacancies(group), get_course(group), get_teacher(group)]
 
     end
     rows
@@ -58,11 +59,13 @@ class FinalReportPdf < Prawn::Document
       end
     end
     result = schedule_list.map do |key, value|
-      days = value.collect { |v| "#{v}a"  }.join(", ")
-      "#{days} #{key}"
+      # days = value.collect { |v| "#{v}a"  }.join(",")
+      days = value.collect { |v| "#{v}a"  }.join("#{days} #{key} \n")
+
+        "#{days} #{key}"
     end
 
-    return result.join(" e ")
+    return result.join(" \n ")
   end
 
   def get_vacancies(group)
@@ -90,7 +93,7 @@ class FinalReportPdf < Prawn::Document
     move_down 15
 
     table_data = get_rows
-    table(table_data, header: true, cell_style: {size: 11}, column_widths: [60,45,160,130,50,50,120,150], position: 5) do
+    table(table_data, header: true, cell_style: {size: 11}, column_widths: [64,45,160,130,50,50,120,150], position: 5) do
       row(0).style font_style: :bold, align: :center
     end
 

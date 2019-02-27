@@ -88,6 +88,7 @@
         name: "Nome"
         matter: "Disciplina"
         semester: "Semestre"
+        vacancies: "Vagas"
 
       schedule:
         begin: "Início"
