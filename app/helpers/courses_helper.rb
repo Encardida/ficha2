@@ -4,7 +4,7 @@ module CoursesHelper
   end
 
   def courses_not_united
-    courses = Course.all
+    courses = Course.order(:code).all
     r_courses = []
     courses.each do |c|
       if !c.name.include? ","

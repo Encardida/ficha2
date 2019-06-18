@@ -7,7 +7,6 @@
 
     <div id="scroll" class="panel panel-default panel-options">
       <% @options.each do |option| %>
-
         <div class="option-body" style="<%= hidden_fields(option) %>">
 
           <div class="option-button">
@@ -35,9 +34,11 @@
               <tbody>
                 <% option.groups.distinct.each do |group| %>
                   <tr id="nohover" style="width:290px; <%= hidden_groups(group) %> ">
-                    <td class="center"> <%= group.name %> </td>
-                    <td class="center"> <%= group.matter.code %></td>
-                    <td> <%= group.course.name %></td>
+
+                    <td class="center">  <%= group.name %> </td>
+
+                    <td class="center">  <%= group.matter.code %> </td>
+                    <td> <%= group.course.name if "#{group.matter.code} + #{group.name}" != "CMA212 + HNR" %></td>
                   </tr>
                 <% end %>
               </tbody>

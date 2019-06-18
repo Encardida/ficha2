@@ -4,7 +4,7 @@
   <div class="col-xs-9">
 
 
-    <%= select_tag('unite_matter_matters', options_from_collection_for_select(matters_no_united, 'id', 'code_with_name'), prompt: "Selecione uma disciplina", :class => 'form-control width-form-unite') %>
+    <%= select_tag('unite_matter_matters', options_from_collection_for_select(matters_no_united,'id' ,'code_with_name'), prompt: "Selecione uma disciplina", :class => 'form-control width-form-unite') %>
     <% if !@show %>
 
     <%= link_to new_button.html_safe, add_unite_matters_path(@unite_matter, 0),

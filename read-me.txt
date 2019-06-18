@@ -16,3 +16,7 @@ Microsoft Windows Script Host (JScript)
 
 **********************************************
 
+
+-OBSERVAÇOES
+
+ 18/06/2019 - Incluido comparação no arquivo /app/view/options/_options.erb linha 41, excluir comparação

@@ -58,6 +58,7 @@ class FinalReportPdf < Prawn::Document
         schedule_list[item] = [schedule.day_to_i + 1]
       end
     end
+    # schedule_list.sort_by{:value]}
     result = schedule_list.map do |key, value|
       # days = value.collect { |v| "#{v}a"  }.join(",")
       days = value.collect { |v| "#{v}a"  }.join("#{days} #{key} \n")

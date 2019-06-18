@@ -15,7 +15,7 @@ module MattersHelper
 
   def matters_no_united
     matters = []
-    m = Matter.all
+    m = Matter.order(:code).all
     m.each do |ma|
 
       if ma.unite_matter.blank?

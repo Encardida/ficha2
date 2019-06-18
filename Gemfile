@@ -46,7 +46,7 @@ gem 'devise', '~> 4.0'
 gem 'less-rails' # deprecated
 gem 'twitter-bootstrap-rails'
 
-gem 'sprockets', '3.7.1'
+gem 'sprockets' #, '3.7.1'
 gem 'autoprefixer-rails'
 
 # deploy with passenger and apache2
